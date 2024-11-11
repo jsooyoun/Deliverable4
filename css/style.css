@@ -47,8 +47,7 @@ header h2:first-of-type {
 section {
     border: 1px solid #ccc;
     padding: 20px;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    opacity: opacity 0.5s ease;;
 }
 
 section.visible {
@@ -151,10 +150,6 @@ nav {
     align-items: center;
     align-self: center;
     align-content: center;
-}
-
-.nav-links li a {
-    transition: all 0.3s ease 0s;
 }
 
 main#main {
@@ -354,16 +349,9 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hamburger-menu .bar {
-        transition: none; 
-    }
 
     section {
         transition: none; 
-    }
-
-    .nav-links.active {
-        animation: none; 
     }
 
 }
