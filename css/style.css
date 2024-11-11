@@ -1,0 +1,373 @@
+header {
+    position: sticky;
+    top: 0;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid grey;
+    z-index: 10;
+}
+
+body {
+    font-size: 16px;
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #ffffff;
+}
+
+tr:nth-child(even), #individual-results .athlete:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(odd), #individual-results .athlete:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+h1, h2 {
+    text-align: center;
+    width: 100%;
+    grid-column: 1/-1;
+}
+
+header h2:first-of-type {
+    margin-top: calc(15vh + 10px);
+}
+
+section {
+    border: 1px solid #ccc;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+section.visible {
+    opacity: 1;
+}
+
+#summary {
+    background-color: #ffffff;
+}
+
+#team-results {
+    background-color: #f9f9f9;
+}
+
+#individual-results {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#individual-results img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#gallery {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 100%;
+}
+
+#gallery img {
+    display: none;
+}
+
+#gallery img.show-images {
+    display: block;
+}
+
+figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+figcaption {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+dd {
+    margin-inline-start: 0;
+    margin-bottom: 10px;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dl {
+    text-align: center;
+}
+
+nav {
+    display: block;
+    margin: 10px;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+}
+
+.nav-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+}
+
+.nav-links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover {
+    color: black;
+}
+
+main#main {
+    margin: 10px;
+}
+
+footer {
+    background-color: #f9f9f9;
+    border-top: #ccc 1px solid;
+}
+
+footer p,
+address,
+a {
+    margin-left: 10px;
+}
+
+/* Mobile First - Default: Hidden Navigation */
+.nav-links {
+    display: none; /* Hide nav links on mobile by default */
+}
+
+/* Show Hamburger Icon Only on Mobile */
+.hamburger-menu {
+    display: flex; /* Show hamburger on mobile */
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    margin: 10px;
+    z-index: 10;
+}
+
+.hamburger-menu .bar {
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    transition: 0.3s ease;
+}
+
+.nav-links.active {
+    display: flex; 
+    flex-direction: column; 
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    width: 95%;
+}
+
+.nav-links ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+}
+
+.nav-links li {
+    margin-bottom: 2px;
+}
+
+.nav-links li a {
+    color: black;
+    margin: 0px;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px;
+    display: block;
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+    .hamburger-menu {
+        display: none; /* Hide hamburger on medium screens */
+    }
+
+    .nav-links {
+        display: flex; /* Show horizontal menu for medium screens and up */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links ul {
+        display: flex;
+        flex-direction: row;
+        padding-left: 0;
+    }
+
+    .nav-links li {
+        margin-right: 20px;
+    }
+
+    .nav-links li a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .nav-links.active {
+            background-color: #121212;
+        }
+
+    }
+}
+
+@media (min-width: 1024px) {
+    .nav-links {
+        margin-left: 40px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: white;
+    }
+
+    header,
+    #summary,
+    #team-results,
+    #individual-results {
+        background-color: #1e1e1e;
+        border: 1px solid #444;
+    }
+
+    th {
+        background-color: #333;
+    }
+
+    #team-results td,
+    #individual-results .athlete:nth-child(odd) {
+        background-color: #2a2a2a;
+    }
+
+    #individual-results .athlete:nth-child(even) {
+        background-color: #414040;
+        color: white;
+    }
+
+    footer {
+        background-color: #2a2a2a;
+    }
+
+    a {
+        color: lightblue;
+    }
+
+    .hamburger-menu .bar {
+        background-color: lightblue;
+    }
+
+    .nav-links {
+        background-color: #121212;
+    }
+
+    .nav-links.active {
+        background-color: #1e1e1e;
+    }
+
+    .nav-links li a{
+        color: white;
+    }
+}
+
+/* Image Gallery */
+#imageContainer img {
+    display: none;
+    width: 200px;
+    margin: 5px;
+}
+
+#imageContainer.show-images img {
+    display: inline-block;
+}
+
+#gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#toggleGallery {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+}
+
+#imageContainer.show-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    width: 100%;
+}
+
+#gallery h2,
+#toggleGallery {
+    z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hamburger-menu .bar {
+        transition: none; 
+    }
+
+    section {
+        transition: none; 
+    }
+
+    .nav-links.active {
+        animation: none; 
+    }
+
+}
