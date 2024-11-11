@@ -157,10 +157,6 @@ nav {
     transition: all 0.3s ease 0s;
 }
 
-.nav-links li a:hover {
-    color: black;
-}
-
 main#main {
     margin: 10px;
 }
